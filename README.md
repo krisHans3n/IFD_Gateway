@@ -1,6 +1,13 @@
 # IFD_Gateway
 API gateway for fraudulent image detection microservices
 
+For week 26-30 April:
+  - Implement Flask REST API routing (Including routes for not yet implemented interfaces)
+  - Implement Postgresql database
+  - Implement runtime database checks (for including redis queries alongside psql queries)
+  - Make the JSON merging / recieving and sending fail safe
+  - Implement GUnicorn/nginx/docker and security where needed
+
 --- connected to local production directory
 
 -----------------------------------------------------------------------------------------
