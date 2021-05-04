@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    image: master-image
+    ports:
+      - 8000
+    command: gunicorn --workers 1 -b :8000 APIMain:app
+    expose:
+      - 8000
+    stdin_open: true
+    tty: true
+
+  worker:
+    image: master-image
+    depends_on:
+      - redis
+    command: rq worker --name worker --url redis://redis:6379/0
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
